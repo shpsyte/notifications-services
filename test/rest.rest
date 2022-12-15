@@ -1,0 +1,15 @@
+@host = http://localhost:3000
+@uuid = "80392d81-c49e-46e4-8654-df4fbc7c67e7"
+// create var to store the token
+GET {{host}}/notification HTTP/2
+Content-Type: application/json
+
+### 
+POST {{host}}/notification HTTP/2
+Content-Type: application/json
+
+{
+	"recipientId": {{uuid}},
+	"content": "vc tem outro noti",
+	"category": "Social Media 2"	
+}	
