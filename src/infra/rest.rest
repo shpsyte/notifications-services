@@ -1,0 +1,32 @@
+@host = http://localhost:3000
+@uuid = "80392d81-c49e-46e4-8654-df4fbc7c67e7"
+// create var to store the token
+GET {{host}}/notification HTTP/2
+Content-Type: application/json
+
+### 
+POST {{host}}/notification HTTP/2
+Content-Type: application/json
+
+{
+	"recipientId": {{uuid}},
+	"content": "vc tem outro noti",
+	"category": "Social Media 2"	
+}	
+
+### 
+// get all notifications by recipientId
+GET {{host}}/notification/80392d81-c49e-46e4-8654-df4fbc7c67e7/get-all HTTP/2
+Content-Type: application/json
+
+
+### mark one as read
+PATCH  {{host}}/notification/6fe3d99c-0b69-450d-8be0-f60d0cf0fadf/mark-as-read HTTP/2
+
+### MARK ONE as unrad
+PATCH  {{host}}/notification/6fe3d99c-0b69-450d-8be0-f60d0cf0fadf/mark-as-unread HTTP/2
+
+
+### count by recipeintID
+GET {{host}}/notification/80392d81-c49e-46e4-8654-df4fbc7c67e7/count HTTP/2
+Content-Type: application/json
